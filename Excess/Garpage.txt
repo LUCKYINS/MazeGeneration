@@ -1,0 +1,11 @@
+def drawGrid(self):
+        self.canvas.resize(self.dim+50, self.dim+50)
+        self.map = QPixmap(self.canvas.width(), self.canvas.height())
+        self.pen = QPainter(self.map)
+        self.pen.setPen(QColor(255,255,255))
+        d = self.grid.dimension
+        for i in range(50,d+1, self.grid.division):
+            self.pen.drawLine(i, 50,i,d)
+            self.pen.drawLine(50, i,d,i)
+        self.pen.end()
+        self.canvas.setPixmap(self.map)
