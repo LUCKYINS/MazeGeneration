@@ -1,3 +1,6 @@
+"""
+    Coder: Luckyyyin
+"""
 from random import randint
 class Node:
     def __init__(self, up: bool= False, down: bool = False, left: bool = False, right: bool = False) -> None:

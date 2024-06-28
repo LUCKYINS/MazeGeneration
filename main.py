@@ -1,3 +1,6 @@
+"""
+    Coder: Luckyyyin
+"""
 from PySide6.QtWidgets import QApplication
 from maze import MazeGeneration
 
