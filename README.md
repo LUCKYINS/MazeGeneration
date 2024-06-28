@@ -1,2 +1,0 @@
-# MazeGeneration
- Procedural Generation Project
