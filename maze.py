@@ -10,7 +10,7 @@ from backend import Grid, Maze
 class MazeGeneration(QWidget):
     def __init__(self) -> None:
         super().__init__()
-        self.grid = Grid(25, 25, 1)
+        self.grid = Grid(24, 24, 24)
         self.canvas = QLabel()
         self.dim = self.grid.dimension
         self.canvas.setStyleSheet("""
@@ -37,12 +37,12 @@ class MazeGeneration(QWidget):
             y *= w
             pos1 = QPoint(x, y)
             if node.up:
-                self.pen.drawLine(pos1, QPoint(x,y-w))
+                self.pen.drawLine(pos1, QPoint(x,y-w*div))
             elif node.down:
-                self.pen.drawLine(pos1,QPoint(x,y+w))
+                self.pen.drawLine(pos1,QPoint(x,y+w*div))
             elif node.left:
-                self.pen.drawLine(pos1,QPoint(x-w,y))
+                self.pen.drawLine(pos1,QPoint(x-w*div,y))
             elif node.right:
-                self.pen.drawLine(pos1,QPoint(x+w,y))
+                self.pen.drawLine(pos1,QPoint(x+w*div,y))
         self.pen.end()
         self.canvas.setPixmap(self.map)
