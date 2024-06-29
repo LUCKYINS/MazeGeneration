@@ -10,7 +10,7 @@ from backend import Grid, Maze
 class MazeGeneration(QWidget):
     def __init__(self) -> None:
         super().__init__()
-        self.grid = Grid(24, 24, 24)
+        self.grid = Grid(24, 24, 1)
         self.canvas = QLabel()
         self.dim = self.grid.dimension
         self.canvas.setStyleSheet("""
