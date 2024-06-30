@@ -55,9 +55,19 @@ class Maze:
     def createMaze(self, w:int, div):
         index = 0
         count = 0
+        down = [(0, i) for i in range(w)]
+        down.extend([(w, i) for i in range(0, w)])
+
+        right = [(i, 0) for i in range(1, w)]
+        right.extend([(i,w) for i in range(0, w-1)])
         for node in self.nodes:
-            node.switchToTrue(randint(1, 4))
             node.addPosition((index, count))
+            if node.position !=(w, w) and node.position !=(w-1, w) and node.position not in down and node.position not in right:
+                node.switchToTrue(randint(1, 4))
+            if node.position in down:
+                node.down = True
+            if node.position in right:
+                node.right = True
             index = index + div if index < w else 0
             count = count + div if index == 0 else count
             

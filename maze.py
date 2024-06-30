@@ -10,7 +10,7 @@ from backend import Grid, Maze
 class MazeGeneration(QWidget):
     def __init__(self) -> None:
         super().__init__()
-        self.grid = Grid(24, 24, 1)
+        self.grid = Grid(25, 25, 1)
         self.canvas = QLabel()
         self.dim = self.grid.dimension
         self.canvas.setStyleSheet("""
@@ -24,7 +24,7 @@ class MazeGeneration(QWidget):
         self.setLayout(self.layout)
         
     def drawGrid(self):
-        self.canvas.resize(self.dim+50, self.dim+50)
+        self.canvas.resize(self.dim+80, self.dim+80)
         self.map = QPixmap(self.canvas.width(), self.canvas.height())
         self.pen = QPainter(self.map)
         self.pen.setPen(QColor(255,255,255))
@@ -33,6 +33,8 @@ class MazeGeneration(QWidget):
         w = self.grid.width
         for node in maze.nodes:
             x,y = node.position
+            x +=2
+            y +=2
             x *= w
             y *= w
             pos1 = QPoint(x, y)
