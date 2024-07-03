@@ -2,7 +2,7 @@
     Coder: Luckyyyin
 """
 from PySide6.QtWidgets import QApplication
-from maze import MazeGeneration
+from src.maze import MazeGeneration
 
 if __name__ == "__main__":
     app = QApplication()
