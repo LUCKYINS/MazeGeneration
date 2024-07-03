@@ -4,7 +4,7 @@
 from PySide6.QtCore import Qt, QPoint
 from PySide6.QtWidgets import QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton
 from PySide6.QtGui import QPainter, QColor, QPixmap
-from src.backend import Grid, Maze
+from backend import Grid, Maze
 
 
 class MazeGeneration(QWidget):
